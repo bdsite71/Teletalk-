@@ -239,15 +239,19 @@
         }
 
         function verifyTransaction() {
-            var transactionId = document.getElementById("transactionId").value;
-            var errorMessageElement = document.getElementById("errorMessage");
+    var transactionId = document.getElementById("transactionId").value;
+    var errorMessageElement = document.getElementById("errorMessage");
 
-            if (transactionId === "") {
-                errorMessageElement.textContent = "ভুল ট্রানজেকশন আইডি! দয়া করে সঠিক আইডি দিন।";
-            } else {
-                errorMessageElement.textContent = "ভুল ট্রানজেকশন আইডি! দয়া করে সঠিক আইডি দিন।";
-            }
-        }
+    if (transactionId === "") {
+        errorMessageElement.textContent = "ভুল ট্রানজেকশন আইডি! দয়া করে সঠিক আইডি দিন।";
+    } else if (transactionId === "5464") {
+        alert("সফলভাবে প্যাকেজ টি পেয়েছেন!");
+        goHome();  // Go back to the home page
+    } else {
+        errorMessageElement.textContent = "ভুল ট্রানজেকশন আইডি! দয়া করে সঠিক আইডি দিন।";
+    }
+}
+
 
         function goHome() {
             document.getElementById("simForm").style.display = "none";  // Hide sim form
